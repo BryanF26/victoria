@@ -26,15 +26,24 @@ public class Main {
 //        System.out.println(firstNameLetter);
 //        System.out.println(passTest);
 
-        final double pi = Math.PI;
-        int r;
-        r = 10;
-        double L1;
-        L1 = LuasLingkaran(pi, r);
-        r = 15;
-        double L2;
-        L2 = LuasLingkaran(pi, r);
-        System.out.println("Luas lingkaran 1 adalah "+L1);
-        System.out.println("Luas lingkaran 2 adalah "+L2);
+//        final double pi = Math.PI;
+//        int r;
+//        r = 10;
+//        double L1;
+//        L1 = LuasLingkaran(pi, r);
+//        r = 15;
+//        double L2;
+//        L2 = LuasLingkaran(pi, r);
+//        System.out.println("Luas lingkaran 1 adalah "+L1);
+//        System.out.println("Luas lingkaran 2 adalah "+L2);
+
+        int angka;
+        angka = 10;
+        if (angka % 2 == 0){
+            System.out.println("Even");
+        }
+        else {
+            System.out.println("Odd");
+        }
     }
 }
