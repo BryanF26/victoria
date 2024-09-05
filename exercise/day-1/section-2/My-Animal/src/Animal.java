@@ -1,4 +1,4 @@
-public class Animal {
+public abstract class Animal {
 
     void makeSound(){
         System.out.println("Some generic animal sound");
@@ -7,4 +7,6 @@ public class Animal {
     void eat(){
         System.out.println("This animal eats food.");
     }
+
+    abstract void sound();
 }
