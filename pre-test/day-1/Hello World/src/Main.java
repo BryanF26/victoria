@@ -4,6 +4,20 @@ public class Main {
         return (pi * Math.pow(r,2));
     }
 
+    public static String OddOrEven(Integer num){
+        if (num % 2 == 0){
+            return "genap";
+        }
+        return "ganjil";
+    }
+
+    public static String MoreThanFifty (Integer num){
+        if (num > 50){
+            return "lebih besar dari 50";
+        }
+        return "lebih kecil dari 50";
+    }
+
     public static void main(String[] args) {
 //        System.out.println("Hello World!");
 //
@@ -37,20 +51,32 @@ public class Main {
 //        System.out.println("Luas lingkaran 1 adalah "+L1);
 //        System.out.println("Luas lingkaran 2 adalah "+L2);
 
-        int angka;
-        angka = 10;
-        if (angka % 2 == 0){
-            System.out.println("Even");
-        }
-        else {
-            System.out.println("Odd");
-        }
-        angka = 15;
-        if (angka % 2 == 0){
-            System.out.println("Even");
-        }
-        else {
-            System.out.println("Odd");
+//        int angka;
+//        angka = 10;
+//        if (angka % 2 == 0){
+//            System.out.println("Even");
+//        }
+//        else {
+//            System.out.println("Odd");
+//        }
+//        angka = 15;
+//        if (angka % 2 == 0){
+//            System.out.println("Even");
+//        }
+//        else {
+//            System.out.println("Odd");
+//        }
+
+//        int myNumber = 5;
+//        String myString = "5";
+//        System.out.println(myNumber == myString);
+
+
+        Integer [] angka = new Integer[]{10, 75, 76, 57};
+        for(Integer num : angka){
+            String oddOrEven = OddOrEven(num);
+            String fifty = MoreThanFifty(num);
+            System.out.println("Angka "+fifty+" dan "+oddOrEven);
         }
     }
 }
