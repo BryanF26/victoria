@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a832b54-d2aa-42d2-8f5e-85407b1e6422" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../My-Animal/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/My-Animal.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/src/Animal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../My-Animal/src/Dog.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../My-Animal/src/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../My-Animal/src/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../My-Animal/src/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../My-Animal/src/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/../My-Animal/src/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../My-Animal/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../My-Animal/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
