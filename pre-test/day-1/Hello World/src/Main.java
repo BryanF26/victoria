@@ -72,11 +72,23 @@ public class Main {
 //        System.out.println(myNumber == myString);
 
 
-        Integer [] angka = new Integer[]{10, 75, 76, 57};
-        for(Integer num : angka){
-            String oddOrEven = OddOrEven(num);
-            String fifty = MoreThanFifty(num);
-            System.out.println("Angka "+fifty+" dan "+oddOrEven);
+//        Integer [] angka = new Integer[]{10, 75, 76, 57};
+//        for(Integer num : angka){
+//            String oddOrEven = OddOrEven(num);
+//            String fifty = MoreThanFifty(num);
+//            System.out.println("Angka "+fifty+" dan "+oddOrEven);
+//        }
+
+        Integer [] day = new Integer[]{1, 2, 3, 5};
+        String dayName;
+        for(Integer num : day){
+            switch (num) {
+                case 1: dayName = "Sunday"; break;
+                case 2: dayName = "Monday"; break;
+                case 3: dayName = "Tuesday"; break;
+                default: dayName = "Invalid Day"; break;
+            }
+            System.out.println(dayName);
         }
     }
 }
