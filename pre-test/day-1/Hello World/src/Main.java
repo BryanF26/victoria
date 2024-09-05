@@ -79,16 +79,26 @@ public class Main {
 //            System.out.println("Angka "+fifty+" dan "+oddOrEven);
 //        }
 
-        Integer [] day = new Integer[]{1, 2, 3, 5};
-        String dayName;
+//        Integer [] day = new Integer[]{1, 2, 3, 5};
+//        String dayName;
+//        for(Integer num : day){
+//            switch (num) {
+//                case 1: dayName = "Sunday"; break;
+//                case 2: dayName = "Monday"; break;
+//                case 3: dayName = "Tuesday"; break;
+//                default: dayName = "Invalid Day"; break;
+//            }
+//            System.out.println(dayName);
+//        }
+
+        Integer [] day = new Integer[]{10, 75, 76, 57};
+        String oddOrEven = "";
         for(Integer num : day){
-            switch (num) {
-                case 1: dayName = "Sunday"; break;
-                case 2: dayName = "Monday"; break;
-                case 3: dayName = "Tuesday"; break;
-                default: dayName = "Invalid Day"; break;
+            switch (num % 2) {
+                case 0: oddOrEven = "Even"; break;
+                case 1: oddOrEven = "Odd"; break;
             }
-            System.out.println(dayName);
+            System.out.println(oddOrEven);
         }
     }
 }
