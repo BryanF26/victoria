@@ -91,14 +91,24 @@ public class Main {
 //            System.out.println(dayName);
 //        }
 
-        Integer [] day = new Integer[]{10, 75, 76, 57};
-        String oddOrEven = "";
-        for(Integer num : day){
-            switch (num % 2) {
-                case 0: oddOrEven = "Even"; break;
-                case 1: oddOrEven = "Odd"; break;
+//        Integer [] day = new Integer[]{10, 75, 76, 57};
+//        String oddOrEven;
+//        for(Integer num : day){
+//            switch (num % 2) {
+//                case 0: oddOrEven = "Even"; break;
+//                case 1: oddOrEven = "Odd"; break;
+//                default: oddOrEven = ""; break;
+//            }
+//            System.out.println(oddOrEven);
+//        }
+
+        for (int i=1; i<=50; i++){
+            if (i%2==0){
+                System.out.println("Even");
             }
-            System.out.println(oddOrEven);
+            else {
+                System.out.println(i);
+            }
         }
     }
 }
