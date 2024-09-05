@@ -129,12 +129,21 @@ public class Main {
 //            System.out.println(i);
 //        }
 
-        for (int i=1; i<=30; i++){
-            if(i % 2 == 0){
-                continue;
-            }
-            System.out.println(i);
+//        for (int i=1; i<=30; i++){
+//            if(i % 2 == 0){
+//                continue;
+//            }
+//            System.out.println(i);
+//        }
+
+        Integer num;
+        num = 10;
+        Integer total;
+        total = 1;
+        for (int i=num; i>0; i--){
+            total *= i;
         }
+        System.out.println(num+"! = "+total);
 
     }
 }
