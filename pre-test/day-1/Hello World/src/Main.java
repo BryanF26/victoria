@@ -45,5 +45,12 @@ public class Main {
         else {
             System.out.println("Odd");
         }
+        angka = 15;
+        if (angka % 2 == 0){
+            System.out.println("Even");
+        }
+        else {
+            System.out.println("Odd");
+        }
     }
 }
