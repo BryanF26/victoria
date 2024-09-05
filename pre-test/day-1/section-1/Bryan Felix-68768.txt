@@ -1,0 +1,39 @@
+1. C
+2. C
+3. A
+4. B
+5. C
+6. C 
+7. A 
+8. B 
+9. C 
+10. A
+11. True
+12. True
+13. True
+14. False
+15. False
+16. Wrapper class adalah membuat primitive data menjadi sebuah object yang memiliki beberapa method yang dapat digunakan
+
+17. == untuk mengecek nilai, .equals() juga mengecek tipe data dan nilai
+
+18. 
+public class Main {
+
+    public static String OddOrEven(int a){
+        if (a%2==0) return "The number is even.";
+        else: return "The number is odd.";
+    }
+
+    public static void main(String[] args) {
+        int myNumber = 12;
+        String check = OddOrEven(myNumber);
+        System.out.print(check);
+    }
+}
+19. For adalah looping ketika banyak iteration sudah diketahui
+While adalah looping sampai kondisi tidak terpenuhi
+Do While adalah melakukan task sekali kemudian looping sampai kondisi tidak terpenuhi
+Foreach adalah looping untuk setiap isi array atau lainnya
+
+20. this merupakan keyword yang digunakan pada class untuk memanggil value yang tersimpan pada class tersebut
