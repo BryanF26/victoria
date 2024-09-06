@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -23,7 +24,7 @@ public class FirstApplication {
 		return "Hello World";
 	}
 
-	@GetMapping("/users/all")
+	@GetMapping("/assets")
 	public ArrayList<GetAssetResponse> getAsset(){
 		ArrayList<GetAssetResponse> list = new ArrayList<>();
 		GetAssetResponse response = GetAssetResponse.builder().id(1L).fullName("Bryan Felix").age(12).gender("Male").build();
@@ -33,6 +34,23 @@ public class FirstApplication {
 		return list;
 	}
 
+	@GetMapping("/assets/{id}")
+	public GetAssetResponse getAssetById(
+			@PathVariable Long id
+	){
+		ArrayList<GetAssetResponse> list = new ArrayList<>();
+		list.add(GetAssetResponse.builder().id(1L).fullName("Bryan Felix").age(12).gender("Male").build());
+		list.add(GetAssetResponse.builder().id(2L).fullName("Felice Isna").age(25).gender("Female").build());
+		list.add(GetAssetResponse.builder().id(3L).fullName("Ospdi Demo").age(23).gender("Female").build());
+		list.add(GetAssetResponse.builder().id(4L).fullName("Hsjdk Ihkd").age(21).gender("Male").build());
+		list.add(GetAssetResponse.builder().id(8L).fullName("Pasdj Iush").age(20).gender("Female").build());
+		for(int i=0; i<list.size(); i++){
+			if(list.get(i).getId().equals(id)){
+				return list.get(i);
+			}
+		}
+		return null;
+	}
 
 	@GetMapping("/users")
 	public List<String> getUser(){
