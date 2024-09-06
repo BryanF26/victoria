@@ -1,0 +1,56 @@
+- get user by id
+URI: /users/1
+Method: GET
+response:
+{
+    "id":"1",
+    "name":"Brusko",
+    "age":23,
+    "gender":"male"
+}
+
+- post user
+URI: /users
+Method: POST
+request:
+{
+    "name":"Ondi"
+    "age":25,
+    "gender":"male"
+}
+response:
+{
+    "status code":"201",
+    "id":"2"
+}
+
+- update user by id
+URI: /users/1
+Method: PUT
+request:
+{
+    "id":"1",
+    "name":"Bisdom",
+    "age":23,
+    "gender":"male"
+}
+response:
+{
+    "status code":"200",
+    "id":"1",
+    "name":"Bisdom",
+    "age":23,
+    "gender":"male"
+}
+
+- delete user by id
+URI: /users/1
+Method: DELETE
+request:
+{
+    "id":"1"
+}
+response:
+{
+    "status code":"200"
+}
