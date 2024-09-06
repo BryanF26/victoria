@@ -1,0 +1,34 @@
+1. B
+2. B 
+3. B 
+4. B 
+5. B 
+6. B 
+7. B 
+8. A 
+9. A 
+10. C 
+1. False
+2. False
+3. True
+4. False
+5. True
+1. Client-Server Architecture: Separation of client and server concerns dimana hal ini dapat dihubungkan dengan penggunaan API
+2.  GET: mendapatkan data
+    POST: membuat data baru.
+    PUT: mengubah data yang ada. 
+    DELETE: menghapus data.
+3. Spring boot mempermudah setup untuk membuat web based menjadi lebih cepat dimana didalamnya juga terdapat MVC, sedangkan spring MVC hanya berfokus pada pembuatan MVC.
+4. @RequestMapping digunakan untuk mapping request ke controller dimana pada setiap controller punya http methods yang berbeda
+5. 200 -> ok, 201-> created, 400->bad request, 403->forbidden, 500->internal server error
+6. Dapat menggunakan dependency validate bawaan dari spring
+7. Prinsip desain yang menyerahkan kendali pembuatan dan pengelolaan objek ke kontainer Spring.
+8. anotasi @RequestBody digunakan untuk mengurai permintaan HTTP yang masuk, sementara anotasi @ResponseBody digunakan untuk mengubah objek Anda menjadi respons HTTP dalam bentuk yang diharapkan klien seperti JSON, XML, atau sekadar teks. 
+9. Jackson bertugas untuk secara otomatis membuat serial objek ini menjadi JSON untuk respons HTTP. Ia juga menangani deserialisasi data JSON yang masuk dalam permintaan HTTP ke objek Java.
+10. exception handling di Spring Boot membantu menangani kesalahan dan pengecualian yang ada di API, sehingga menghasilkan aplikasi perusahaan yang tangguh. kita dapat mendefinisikan kelas penanganan pengecualian global dan memberi anotasi dengan @ControllerAdvice. Anotasi ini membantu mengintegrasikan beberapa penanganan pengecualian ke dalam satu unit global.
+11. Kesalahan CORS terjadi ketika halaman web membuat permintaan ke domain yang berbeda dari domain yang menyajikan halaman tersebut, dan server merespons dengan kesalahan HTTP karena header “Origin” dalam permintaan tersebut tidak diizinkan oleh konfigurasi CORS server. Kita memerlukan CORS karena browser modern biasanya memiliki kebijakan keamanan asal yang sama (browser melarang panggilan AJAX ke sumber daya di luar asal saat ini). Jika permintaan lintas asal melanggar kebijakan asal yang sama dan tidak diizinkan oleh header CORS server, browser akan memblokir permintaan tersebut dan memicu kesalahan CORS dalam JavaScript.
+12. Set Up a Spring Boot Project, Configure Spring Security Dependencies, Implement Security Configuration, Define UserDetailsService, Secure REST Endpoints, Test Your Security Configuration, Implement Token-Based Authentication (Optional), Add CORS Configuration (If necessary), Document The Security Flows, Review and Refine
+13. Setiap permintaan dari klien ke server harus berisi semua informasi yang dibutuhkan server untuk memenuhi permintaan tersebut. Karena server tidak menyimpan status klien, maka server dapat dengan mudah menangani sejumlah besar permintaan bersamaan dari klien yang berbeda
+14. Postman memungkinkan pengguna menyimpan nilai dalam variabel di tingkat lingkungan, yang dapat digunakan di URL, header, dan isi permintaan apa pun. Hal ini memungkinkan pengguna untuk menjalankan pengujian API otomatis di lingkungan pengujian khusus sebelum menerapkan kode ke produksi.
+15. Unit Testing merupakan semacam white box testing, dimana Integration Testing adalah semacam black-box testing
+
