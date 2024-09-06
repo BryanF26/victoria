@@ -35,7 +35,7 @@ public class FirstApplication {
 	}
 
 	@GetMapping("/assets/{id}")
-	public GetAssetResponse getAssetById(
+	public ArrayList<GetAssetResponse> getAssetById(
 			@PathVariable Long id
 	){
 		ArrayList<GetAssetResponse> list = new ArrayList<>();
@@ -44,12 +44,14 @@ public class FirstApplication {
 		list.add(GetAssetResponse.builder().id(3L).fullName("Ospdi Demo").age(23).gender("Female").build());
 		list.add(GetAssetResponse.builder().id(4L).fullName("Hsjdk Ihkd").age(21).gender("Male").build());
 		list.add(GetAssetResponse.builder().id(8L).fullName("Pasdj Iush").age(20).gender("Female").build());
-		for(int i=0; i<list.size(); i++){
-			if(list.get(i).getId().equals(id)){
-				return list.get(i);
+
+		ArrayList<GetAssetResponse> temp = new ArrayList<>();
+		for(GetAssetResponse x : list){
+			if(x.getId() >= id){
+				temp.add(x);
 			}
 		}
-		return null;
+		return temp;
 	}
 
 	@GetMapping("/users")
