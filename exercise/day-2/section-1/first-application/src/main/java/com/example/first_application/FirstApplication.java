@@ -23,7 +23,7 @@ public class FirstApplication {
 		return "Hello World";
 	}
 
-	@GetMapping("/allUsers")
+	@GetMapping("/users/all")
 	public ArrayList<GetAssetResponse> getAsset(){
 		ArrayList<GetAssetResponse> list = new ArrayList<>();
 		GetAssetResponse response = GetAssetResponse.builder().id(1L).fullName("Bryan Felix").age(12).gender("Male").build();
