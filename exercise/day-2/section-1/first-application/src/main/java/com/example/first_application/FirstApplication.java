@@ -1,7 +1,10 @@
 package com.example.first_application;
 
 import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.request.EmployeeUserRequest;
+import com.example.first_application.request.UpdateUserRequest;
 import com.example.first_application.response.CreateUserResponse;
+import com.example.first_application.response.EmployeeUserResponse;
 import com.example.first_application.response.GetAssetResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +22,8 @@ public class FirstApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FirstApplication.class, args);
 	}
+
+	private ArrayList<CreateUserResponse> userss = new ArrayList<>();
 
 	@GetMapping
 	public String sayHello(){
@@ -128,16 +133,49 @@ public class FirstApplication {
 	public ResponseEntity<ArrayList<CreateUserResponse>> createUser(
 			@RequestBody CreateUserRequest request){
 
-		ArrayList<CreateUserResponse> userResponses = new ArrayList<>();
+//		ArrayList<CreateUserResponse> userResponses = new ArrayList<>();
 
 //		mock data
-		userResponses.add(CreateUserResponse.builder().id(1L).fullName("AB").age(12).gender("Male").build());
-		userResponses.add(CreateUserResponse.builder().id(2L).fullName("CD").age(21).gender("Female").build());
+//		userResponses.add(CreateUserResponse.builder().id(1L).fullName("AB").age(12).gender("Male").build());
+//		userResponses.add(CreateUserResponse.builder().id(2L).fullName("CD").age(21).gender("Female").build());
 
 //		add new data
-		userResponses.add(CreateUserResponse.builder().id(request.getId()).fullName(request.getFullName()).age(request.getAge()).gender(request.getGender()).build());
+//		userResponses.add(CreateUserResponse.builder().id(request.getId()).fullName(request.getFullName()).age(request.getAge()).gender(request.getGender()).build());
+		userss.add(CreateUserResponse.builder().id((long)userss.size()+1).fullName(request.getFullName()).age(request.getAge()).gender(request.getGender()).build());
 
-		return new ResponseEntity<>(userResponses, HttpStatus.OK);
+		return new ResponseEntity<>(userss, HttpStatus.OK);
+	}
+
+	@PostMapping("/employee")
+	public ResponseEntity<ArrayList<EmployeeUserResponse>> createEmployee(
+			@RequestBody EmployeeUserRequest request){
+
+		ArrayList<EmployeeUserResponse> employeeResponses = new ArrayList<>();
+
+//		mock data
+		employeeResponses.add(EmployeeUserResponse.builder().id(1L).name("AB").age(12).address(null).phone("12323").build());
+		employeeResponses.add(EmployeeUserResponse.builder().id(2L).name("CD").age(21).address("Jakarta").phone("7589485").build());
+		employeeResponses.add(EmployeeUserResponse.builder().id(3L).name("CD").age(21).address("Jakarta").phone("7589485").build());
+
+//		add new data
+		if(request.getName() != null && (request.getAge() != null) && request.getPhone() != null){
+			employeeResponses.add(EmployeeUserResponse.builder().id((long)employeeResponses.size()+1).name(request.getName()).age(request.getAge()).address(request.getAddress()).phone(request.getPhone()).build());
+		}
+
+		return new ResponseEntity<>(employeeResponses, HttpStatus.OK);
+	}
+
+	@PatchMapping("/users/{id}")
+	public ResponseEntity<ArrayList<CreateUserResponse>> updateUser(
+			@PathVariable("id") Long id,
+			@RequestBody UpdateUserRequest req){
+		for (CreateUserResponse user : userss){
+			if (user.getId().equals(id)){
+				System.out.println(req);
+				user.setFullName(req.getFullName());
+			}
+		}
+		return new ResponseEntity<>(userss, HttpStatus.OK);
 	}
 
 }

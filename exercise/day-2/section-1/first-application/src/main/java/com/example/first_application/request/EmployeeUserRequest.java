@@ -8,14 +8,16 @@ import lombok.Setter;
 @Builder
 @Setter
 @Getter
-public class CreateUserRequest {
-
-    @JsonProperty("full_name")
-    private String fullName;
+public class EmployeeUserRequest {
+    @JsonProperty("name")
+    private String name;
 
     @JsonProperty("age")
-    private int age;
+    private Integer age;
 
-    @JsonProperty("gender")
-    private String gender;
+    @JsonProperty("address")
+    private String address;
+
+    @JsonProperty("phone")
+    private String phone;
 }
