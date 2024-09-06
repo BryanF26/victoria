@@ -1,8 +1,12 @@
 package com.example.first_application;
 
+import com.example.first_application.request.CreateUserRequest;
+import com.example.first_application.response.CreateUserResponse;
 import com.example.first_application.response.GetAssetResponse;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -118,6 +122,22 @@ public class FirstApplication {
 			return new ArrayList<>();
 		}
 		return list.subList(start,end);
+	}
+
+	@PostMapping("/users")
+	public ResponseEntity<ArrayList<CreateUserResponse>> createUser(
+			@RequestBody CreateUserRequest request){
+
+		ArrayList<CreateUserResponse> userResponses = new ArrayList<>();
+
+//		mock data
+		userResponses.add(CreateUserResponse.builder().id(1L).fullName("AB").age(12).gender("Male").build());
+		userResponses.add(CreateUserResponse.builder().id(2L).fullName("CD").age(21).gender("Female").build());
+
+//		add new data
+		userResponses.add(CreateUserResponse.builder().id(request.getId()).fullName(request.getFullName()).age(request.getAge()).gender(request.getGender()).build());
+
+		return new ResponseEntity<>(userResponses, HttpStatus.OK);
 	}
 
 }
