@@ -1,0 +1,24 @@
+1. B 
+2. A 
+3. B 
+4. A 
+5. B 
+6. A 
+7. B 
+8. B 
+9. A 
+10. C
+11. Pada JWT based authentication, token mempunyai lifespan yang terbatas dengan expiration time untuk mengurangi resiko penyalahgunaan. Ketika token expired, user tidak dapat melakukan authentication request. Untuk menjaga token tetap aktif, refresh token diberikan bersama JWT. Dengan masa berlaku yang lebih panjang dapat digunakan tanpa perlu melakukan login ulang.
+12. Enkripsi sangat penting untuk melindungi data pengguna agar tidak terjadi kebocoran data. BCrypt merupakan algoritma hashing di Spring Security, membuat salt unik untuk setiap password sehingga aman terhadap rainbow table attacks. Menyediakan interface PasswordEncoder yang memastikan password di hash secara aman.
+13. Tambahkan dependensi spring-boot-starter-oauth2-client. Konfigurasi client OAuth2 di application.yml atau application.properties dengan kredensial client dan detail penyedia (Google, Facebook, dll). Gunakan anotasi @EnableOAuth2Client atau @EnableOAuth2Sso di kelas konfigurasi. Spring Security akan menangani alur login OAuth2, mengarahkan pengguna ke penyedia untuk autentikasi dan mengembalikan informasi pengguna setelah berhasil login.
+14. OAuth2 authorization server bertugas memberikan access token dan refresh token kepada client yang sudah terauntetikasi sehingga dapat mengakses resources yang terlindungi. 
+15. CORS adalah fitur keamanan yang membatasi halaman web untuk melakukan permintaan ke domain yang berbeda dari domain yang melayani halaman tersebut. Ini mencegah akses yang tidak sah ke sumber daya di domain lain. Namun, dalam aplikasi web modern, permintaan lintas domain terkadang diperlukan (misalnya, API). CORS memungkinkan pengembang untuk menentukan domain mana yang diizinkan untuk mengakses sumber daya, sehingga menjamin keamanan sambil memungkinkan komunikasi lintas domain.
+16. CORS dapat dikonfigurasi di Spring Boot menggunakan antarmuka WebMvcConfigurer atau langsung di Spring Security dengan menambahkan konfigurasi CORS pada objek HttpSecurity.
+17. Session fixation attack terjadi ketika attacker memaksa pengguna menggunakan session id yang diketahui, kemudian dapat dibajak session user. Spring Security memproteksi dengan secara otomatis membuat session baru ketika user authentication.
+18. Stateful menyimpan informasi sesi pengguna di server (misalnya, di memory, database). Setiap client memiliki sesi yang terpisah dengan server.  Stateless (sering digunakan dengan JWT) tidak menyimpan informasi sesi di server. Sebaliknya, semua data yang diperlukan (seperti detail autentikasi) dikodekan dalam token (misalnya, JWT) yang dikirim bersama setiap permintaan. Ini menyederhanakan skalabilitas karena tidak perlu mengelola sesi.
+19. SQL Injection: Gunakan query parameterisasi atau framework ORM untuk menghindari.
+Cross-Site Scripting (XSS): Lakukan escape dan sanitasi pada input pengguna.
+Cross-Site Request Forgery (CSRF): Aktifkan perlindungan CSRF di Spring Security.
+Penyimpanan Password yang Tidak Aman: Gunakan algoritma enkripsi yang kuat (misalnya BCrypt).
+Eksposur Data Sensitif: Amankan endpoint sensitif, gunakan HTTPS, dan enkripsi data sensitif.
+20. Audit keamanan secara berkala penting untuk mengidentifikasi kerentanan dan memastikan bahwa praktik terbaik diikuti. Audit ini membantu mencegah serangan dan memastikan kepatuhan terhadap regulasi. Alat seperti OWASP ZAP, SonarQube, dan Nessus dapat membantu dalam pemindaian kerentanan dan analisis kode untuk mendeteksi potensi celah keamanan.
