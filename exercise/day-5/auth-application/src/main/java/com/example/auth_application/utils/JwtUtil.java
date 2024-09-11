@@ -3,6 +3,7 @@ package com.example.auth_application.utils;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
@@ -16,6 +17,7 @@ public class JwtUtil {
     private final String SECRET_KEY = "4be1edd7388aafd5a4bdd03041a8347ea184e17987e87aaa792f6d7b71ba01a7";
 
     public String generateToken(String username) {
+
         return Jwts.builder()
                 .setSubject(username)
                 .claim("id", "1")

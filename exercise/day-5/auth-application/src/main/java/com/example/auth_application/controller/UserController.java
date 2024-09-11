@@ -1,8 +1,14 @@
 package com.example.auth_application.controller;
 
 import com.example.auth_application.dto.request.user.SigninRequest;
+import com.example.auth_application.dto.response.user.ErrorResponse;
 import com.example.auth_application.dto.response.user.SigninResponse;
+import com.example.auth_application.utils.ApiException;
+//import com.example.auth_application.utils.CustomException;
+import com.example.auth_application.utils.ApiResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,9 +28,25 @@ public class UserController {
 
 
     @PostMapping("/signin")
-    public SigninResponse signin(@RequestBody SigninRequest authenticationRequest) throws Exception {
+    public ResponseEntity<ApiResponse<Object>>  signin(@RequestBody SigninRequest authenticationRequest) throws Exception {
 
-        return SigninResponse.builder().token(jwtUtil.generateToken("x")).build();
+
+        if (authenticationRequest.getUsername() == null){
+            ApiResponse<Object> response = new ApiResponse<>(null, "error get data");
+            return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+
+
+        }
+
+
+        ApiResponse<Object> response = new ApiResponse<>(jwtUtil.generateToken(authenticationRequest.getUsername()), "success");
+
+          return new ResponseEntity<>(response, HttpStatus.OK);
+
+
+
+
+
     }
 
     @GetMapping("/hello")
