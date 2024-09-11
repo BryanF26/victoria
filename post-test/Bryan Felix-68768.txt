@@ -1,0 +1,27 @@
+1. B
+2. A 
+3. D 
+4. A 
+5. D 
+6. False
+7. True
+8. True
+9. False
+10. False
+11. Untuk menghandle menerima HTTP request dan mengembalikan response
+12. Pada service layer terdapat business logic yang dimana akan memerlukan data yang sesuai dengan business logic yang mana akan diproses oleh Repository layer
+13. Pada directory utama terdapat file utama untuk entry point, kemudian terdapat beberapa package yaitu controller untuk menampun file controller yang mengatur handlling http request dan response, kemudian service yang menampung file service yang mana terdapat business logic, repository yang menampung file repository yang bertanggung jawab atas access ke data, model yang menyimpan file struktur data, config untuk file konfigurasi
+14. Repository layer untuk mengatur dan bertanggung jawab access data yang dibutuhkan oleh service layer.
+15. Implicit adalah mengkonversi data type secara langsung ketika suatu data ingin di masukkan ke variable lain dengan tipe data yang berbeda, sedangkan explicit adalah mengkonversi data type secara eksplisit dimana programmer harus mengassign data type yang ingin dikonversi.
+16. Mengaktifkan CORS and matikan CSRF, Set session management menjadi stateless, Set unauthorized requests exception handler,Set permissions pada endpoints, dan menambahkan JWT token filter.
+17. 
+String angka = "23.56";
+double number = Double.parseDouble(numberString);
+18. Memastikan bahwa kedua output yang diharpkan dan output yang dihasilkan adalah sama
+19. Dengan menambahkan custom UserDetailsService pada application context sebagai bean
+20.  @Service, file service class ditempatkan pada package service
+21. Service memiliki fungsi untuk memberikan business logic yang dibutuhkan sesuai dengan controller yang sudah dibuatkan.
+22. Pertama harus membuat terlebih dahulu entity, repository, dan service, kemudian baru dapat membuat unit test yang mana akan menggunakan ketiganya untuk mentesting apakah berjalan sesuai dengan logic business yang diinginkan
+23. @RequestMapping berfungsi untuk memapping request kepada controller methods, terdapat beberapa jenis yang memiliki tugas berbeda, yaitu @GetMapping untuk retrieve data, @PostMapping untuk menambahkan data, @PutMapping untuk mengubah data, @DeleteMapping untuk menghapus data, @PatchMapping untuk mengganti sebagai attribute data
+24. Menggunakan intregation test untuk mengecek interaksi antara repository dan service
+25. Menggunakan annotation @ExceptionHandler pada controller untuk menghandle exception pada controller
